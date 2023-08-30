@@ -1,4 +1,5 @@
 <?php
+include 'search.php';
 // Ket noi voi database
 class Product
 {
@@ -11,7 +12,11 @@ class Product
             $sql = "SELECT products.*,categories.name
             FROM categories
             JOIN products ON categories.id = products.category_id
-            WHERE categories.name LIKE '%$keyword%' ";
+            WHERE products.quantity LIKE '%$keyword%'
+            OR products.name LIKE '%$keyword%' ";
+            
+
+           
         } else {
 
             $sql = "SELECT categories.name, products.*
@@ -34,7 +39,7 @@ class Product
         global $conn;
         $sql = "SELECT products.*,categories.name FROM categories
             JOIN products ON categories.id = products.category_id
-             WHERE id = $id";
+            WHERE products.id = $id ";
         $stmt = $conn->query($sql);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $row = $stmt->fetch();
@@ -49,6 +54,7 @@ class Product
         $quantity = $data['quantity'];
         $price = $data['price'];
         $category_id = $data['category_id'];
+        
         if (isset($_FILES['image'])) {
             if (!$_FILES['image']['error']) {
                 move_uploaded_file($_FILES['image']['tmp_name'], ROOT_DIR . '/Public/uploads/' . $_FILES['image']['name']);
@@ -97,11 +103,13 @@ class Product
             $sql = "SELECT `image` FROM `products` WHERE `id` = $id";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
-            $image_url = $stmt->fetchColumn();
+            $image = $stmt->fetchColumn();
         }
 
 
-        $sql = "UPDATE `products` SET `name` = '$name', `quantity` = '$quantity', `price` = '$price, `image` = '$image', `category_id` = '$category_id' WHERE `id` = $id";
+        $sql = "UPDATE `products` SET `name` = '$name', `quantity` = '$quantity',
+         `price` = '$price', `image` = '$image', `category_id` = '$category_id' 
+         WHERE `id` = $id";
         //Thuc hien truy van
         $conn->exec($sql);
         return true;
@@ -117,11 +125,11 @@ class Product
         return true;
     }
 
-    //tim du lieu
+    // tim du lieu
     // public static function search()
     // {
     //     global $conn;
-    //     $sql = "SELECT * FROM posts WHERE id LIKE '%$search%";
+    //     $sql = "SELECT * FROM products WHERE id LIKE '%$search%";
     //     $stmt = $conn->query($sql);
     //     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     //     $row = $stmt->fetch();

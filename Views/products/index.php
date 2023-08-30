@@ -14,10 +14,6 @@
 
         <th>TUỲ CHỌN</th>
 
-
-        
-
-
     </tr>
 
     <!-- Bắt đầu lặp -->
@@ -32,8 +28,8 @@
             <td><?php echo $r['name']; ?> </td>
             <td><?php echo $r['quantity']; ?> </td>
                  <td><?php echo $r['price']; ?> </td>
-                 <td><img width="100" src="<?php echo 'http://localhost/cs_m3/' . $r['image']; ?>" alt=""></td>
-            <td><?php echo $r['category_id']; ?> </td>
+                 <td><img width="100" src="<?php echo 'http://localhost/cs_m3' . $r['image']; ?>" alt=""></td>
+            <td><?php echo $r['name']; ?> </td>
             <td>
                 <a href="index.php?action=edit&id=<?php echo $r['id']; ?>">Sua</a> |
                 <a href="index.php?action=show&id=<?php echo $r['id']; ?>">Xem</a> |

@@ -8,6 +8,7 @@
         <td><?= $row['id'];?></td>
         <td><?= $row['name'];?></td>
         <td><?= $row['description'];?></td>
+        
     </tr>
    
 </table>

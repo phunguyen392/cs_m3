@@ -2,8 +2,14 @@
     TÊN SẢN PHẨM THUỐC:<br><input type="text" name="name" value="<?= $row['name'];?>"> <br>
     SỐ LƯỢNG:<br> <input type="text" name="quantity" value="<?= $row['quantity'];?>"> <br>
     GIÁ CẢ :<br><input type="text" name="price" value="<?= $row['price'];?>"> <br>
-    DANH MỤC THUỐC:<br> <input type="text" name="category_id" value="<?= $row['category_id'];?>"> <br>
-    HÌNH ẢNH:<br> <input type="file" name="image" value="<?= $row['image'];?>"> <br>
+    DANH MỤC THUỐC:<br> 
+    <select name="category_id" style="width:177px;">
+    <?php foreach ($items as $row) : ?>
+          <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+        <?php endforeach; ?>
+        <br><br>
+            HÌNH ẢNH:<br> 
+    <input type="file" name="image" value="<?= $row['image'];?>"> <br>
 
     <input type="submit" value="Cap nhat">
 </form>
