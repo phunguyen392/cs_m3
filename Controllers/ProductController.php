@@ -1,7 +1,6 @@
 <?php
-
 require_once 'Models/Product.php';
-// require_once 'Models/Category.php';
+require_once 'Models/Category.php';
 class ProductController {
     // Hien thi danh sach records => table
     public function index(){
@@ -29,7 +28,7 @@ class ProductController {
     public function edit(){
         $id = $_GET['id'];
         $row = Product::find($id);
-        // $items = Category::all();
+        $cate = Category::all();
         // Truyen xuong Views
         require_once 'Views/products/edit.php';
     }

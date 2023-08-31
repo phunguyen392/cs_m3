@@ -11,7 +11,8 @@
         <th>GIÁ CẢ</th>
         <th>HÌNH ẢNH</th>
         <th>TÊN DANH MỤC THUỐC</th>
-
+        <th>TRẠNG THÁI</th>
+        
         <th>TUỲ CHỌN</th>
 
     </tr>
@@ -30,6 +31,10 @@
                  <td><?php echo $r['price']; ?> </td>
                  <td><img width="100" src="<?php echo 'http://localhost/cs_m3' . $r['image']; ?>" alt=""></td>
             <td><?php echo $r['name']; ?> </td>
+            <td><?php echo  $r['status']  ;?> </td>
+         
+           
+            
             <td>
                 <a href="index.php?action=edit&id=<?php echo $r['id']; ?>">Sua</a> |
                 <a href="index.php?action=show&id=<?php echo $r['id']; ?>">Xem</a> |

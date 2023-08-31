@@ -4,12 +4,15 @@
     GIÁ CẢ :<br><input type="text" name="price" value="<?= $row['price'];?>"> <br>
     DANH MỤC THUỐC:<br> 
     <select name="category_id" style="width:177px;">
-    <?php foreach ($items as $row) : ?>
+    <?php foreach ($cate as $row) : ?>
           <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
         <?php endforeach; ?>
+    </select>
         <br><br>
             HÌNH ẢNH:<br> 
-    <input type="file" name="image" value="<?= $row['image'];?>"> <br>
-
+            <br> <input type="file" name="image" > <br>
+            TRẠNG THÁI:<br>
+            <input type="number" name="status" value="<?= $row['status'];?>">
+    <br>
     <input type="submit" value="Cap nhat">
 </form>

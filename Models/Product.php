@@ -54,6 +54,7 @@ class Product
         $quantity = $data['quantity'];
         $price = $data['price'];
         $category_id = $data['category_id'];
+        $status = $data['status'];
         
         if (isset($_FILES['image'])) {
             if (!$_FILES['image']['error']) {
@@ -61,10 +62,11 @@ class Product
                 $image = '/Public/uploads/' . $_FILES['image']['name'];
             }
         }
+
         $sql = "INSERT INTO `products` 
-            ( `name`, `quantity`, `price`, `category_id`, `image`) 
+            ( `name`, `quantity`, `price`, `category_id`, `image`,`status`) 
             VALUES 
-            ('$name','$quantity','$price','$category_id','$image')";
+            ('$name','$quantity','$price','$category_id','$image','$status')";
         //Thuc hien truy van
         $conn->exec($sql);
         return true;
@@ -78,6 +80,8 @@ class Product
         $quantity = $data['quantity'];
         $price = $data['price'];
         $category_id = $data['category_id'];
+        $status = $data['status'];
+
         $image = '';
           // Kiểm tra xem đã tải lên ảnh mới hay chưa
           if (isset($_FILES['image']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
@@ -108,7 +112,7 @@ class Product
 
 
         $sql = "UPDATE `products` SET `name` = '$name', `quantity` = '$quantity',
-         `price` = '$price', `image` = '$image', `category_id` = '$category_id' 
+         `price` = '$price', `image` = '$image', `category_id` = '$category_id', `status` = '$status' 
          WHERE `id` = $id";
         //Thuc hien truy van
         $conn->exec($sql);
