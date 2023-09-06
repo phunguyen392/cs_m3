@@ -11,5 +11,7 @@
     <p><?php echo $message; ?></p>
 <?php endif; ?>
 <br>
-<input type="submit" value="THÊM MỚI">
+<button type="submit" value="THÊM MỚI">THÊM MỚI</button>
+<button> <a href="index.php?controller=customer&action=index">QUAY LẠI</a></button>
+
 </form>

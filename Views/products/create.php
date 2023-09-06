@@ -16,5 +16,7 @@
 
      </select>
   <br><br>
-    <input type="submit" value="THÊM MỚI">
+    <button type="submit" value="THÊM MỚI">THÊM MỚI</button>
+  <button> <a href="index.php?controller=product&action=index">QUAY LẠI</a></button>
+
 </form>

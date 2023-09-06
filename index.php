@@ -15,7 +15,7 @@ require_once 'db.php';
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>CASE STUDY</title>
 
     <!-- Custom fonts for this template -->
     <link href="<?php echo ROOT_URL?>Public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,7 @@ require_once 'db.php';
                 <?php
    
    $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-   $controllers = isset($_GET['controller']) ? $_GET['controller'] : 'product';
+   $controllers = isset($_GET['controller']) ? $_GET['controller'] : 'order_detail';
 
    switch ($controllers) {
        case 'category':
@@ -116,10 +116,10 @@ require_once 'db.php';
    ?>  
                     <!-- Page Heading -->
                   
-                    <h1 class="m-0 font-weight-bold text-primary">csm3</h1>
+                    <!-- <h1 class="m-0 font-weight-bold text-primary">csm3</h1> -->
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <!-- <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">thay roi</h6>
                         </div>
@@ -141,7 +141,7 @@ require_once 'db.php';
                         </div>
                     </div>
 
-                </div>
+                </div> -->
                 <!-- /.container-fluid -->
 
             </div>

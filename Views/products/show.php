@@ -20,10 +20,10 @@ print_r($row);
         <td><?= $row['name']; ?></td>
         <td><?= $row['quantity']; ?></td>
         <td><?= $row['price']; ?></td>
-        <td><img width="100" src="<?php echo ROOT_URL.$r['image']; ?>" alt=""></td>
+        <td><img width="100" src="<?php echo ROOT_URL.$row['image']; ?>" alt=""></td>
         <td>
     <?php
-    if($r['status'] == 0) {
+    if($row['status'] == 0) {
         echo 'Hết hàng';
     } else {
         echo 'Còn hàng';

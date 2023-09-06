@@ -4,7 +4,9 @@
     class Category {
         // lay ta ca du lieu
         public static function all(){
+            
             global $conn;
+            
             $sql = "SELECT * FROM `categories`";
             $stmt = $conn->query($sql);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);

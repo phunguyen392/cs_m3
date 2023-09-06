@@ -21,7 +21,9 @@ class ProductController {
         // Goi model
         Product::store($_POST);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=product&action=index");
+        // header("Location: index.php?controller=product&action=index");
+        echo '<script>window.location.href = "index.php?controller=product&action=index";</script>';
+
 
     }
     // Hien thi form chinh sua
@@ -38,7 +40,9 @@ class ProductController {
         Product::update( $id, $_POST );
 
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=product&action=index");
+        // header("Location: index.php?controller=product&action=index");
+        echo '<script>window.location.href = "index.php?controller=product&action=index";</script>';
+
     }
 
     // Xoa
@@ -46,7 +50,9 @@ class ProductController {
         $id = $_GET['id'];
         Product::delete($id);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=product&action=index");
+        // header("Location: index.php?controller=product&action=index");
+        echo '<script>window.location.href = "index.php?controller=product&action=index";</script>';
+
     }
     // Xem chi tiet
     public function show(){

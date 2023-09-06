@@ -9,11 +9,12 @@ class Product
         global $conn;
         if (isset($_GET['search'])) {
             $keyword = $_GET['search'];
-            $sql = "SELECT products.*,categories.category_name
+            $sql = "SELECT *
             FROM categories
             JOIN products ON categories.id = products.category_id
-            WHERE products.status LIKE '%$keyword%'
-            OR products.name LIKE '%$keyword%' ";
+            WHERE categories.category_name LIKE '%$keyword%'
+            OR products.status LIKE '%$keyword%' "
+             ;
             
             
            

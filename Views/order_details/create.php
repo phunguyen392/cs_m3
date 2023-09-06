@@ -1,17 +1,17 @@
 <form action="index.php?controller=order_detail&action=store" method="post" ><br>
-<label>MÃ ĐƠN HÀNG:</label><br>
+<label>NGÀY THÁNG:</label><br>
 
 <select name="order_id" style="width:177px;">
-<?php foreach ($items as $row) : ?>
-          <option value="<?php echo $row['order_id']; ?>"><?php echo $row['order_id']; ?></option>
+<?php foreach ($orders as $order) : ?>
+          <option value="<?php echo $order['id']; ?>"><?php echo $order['order_date']; ?></option>
         <?php endforeach; ?>
       </select><br><br>   
       
-      <label>MÃ SẢN PHẨM:</label><br>
+      <label>TÊN THUỐC:</label><br>
 
 <select name="product_id" style="width:177px;">
-<?php foreach ($items as $row) : ?>
-          <option value="<?php echo $row['product_id']; ?>"><?php echo $row['product_id']; ?></option>
+<?php foreach ($products as $product) : ?>
+          <option value="<?php echo $product['id']; ?>"><?php echo $product['name']; ?></option>
         <?php endforeach; ?>
       </select><br><br>  
 
@@ -22,5 +22,7 @@
         SỐ LƯỢNG THUỐC TRONG ĐƠN :<br><input type="number" name="order_price"> <br><br>
    
   <br><br>
-    <input type="submit" value="THÊM MỚI">
+<button> <a href="index.php?controller=order_detail&action=index">QUAY LẠI</a></button>
+
+    <button type="submit" value="THÊM MỚI">THÊM MỚI</button>
 </form>

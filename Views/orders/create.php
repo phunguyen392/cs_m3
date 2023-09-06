@@ -2,8 +2,8 @@
 <label>TÊN KHÁCH HÀNG:</label><br>
 
 <select name="customer_id" style="width:177px;">
-<?php foreach ($items as $row) : ?>
-          <option value="<?php echo $row['customer_id']; ?>"><?php echo $row['customer_id']; ?></option>
+<?php foreach ($customer as $customer) : ?>
+          <option value="<?php echo $customer['id']; ?>"><?php echo $customer['customer_name']; ?></option>
         <?php endforeach; ?>
       </select><br><br>      
 
@@ -11,5 +11,7 @@
     TỔNG TIỀN:<br><input type="number" name="total_amount"> <br><br>
    
   <br><br>
-    <input type="submit" value="THÊM MỚI">
+    <button type="submit" value="THÊM MỚI">THÊM MỚI</button>
+  <button> <a href="index.php?action=index">QUAY LẠI</a></button>
+
 </form>

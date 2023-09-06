@@ -1,4 +1,4 @@
-<form action="index.php?action=update&id=<?= $row['id'];?>" method="post" >
+<form action="index.php?controller=customer&action=update&id=<?= $row['id'];?>" method="post" >
 <label for="customer_name">DANH SÁCH KHÁCH HÀNG:</label><br>
 <input type="text" id="customer_name" name="customer_name" value="<?= $row['customer_name'];?>"><br><br>
 <label for="address">ĐỊA CHỈ</label><br>
@@ -8,5 +8,7 @@
 <label for="email">EMAIL:</label><br>
 <input type="email" id="email" name="email" value="<?= $row['email'] ;?>"><br><br>
 
-<input type="submit" value="Cập nhật">
+<button type="submit" value="Cập nhật">Cập nhật</button>
+<button>  <a href="index.php?controller=customer&action=index">QUAY LẠI</a></button>
+
 </for>

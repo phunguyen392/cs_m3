@@ -6,9 +6,11 @@
             public static function all(){
                 global $conn;
                 $sql = "SELECT *
-                     FROM `order_details`
-                     JOIN products ON order_details.product_id = products.id
-                     JOIN orders ON order_details.order_id = orders.id";
+
+                FROM order_details
+                JOIN products ON order_details.product_id = products.id
+                JOIN orders ON order_details.order_id = orders.id
+                JOIN customers ON orders.customer_id = customers.id;";
 
                 $stmt = $conn->query($sql);
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -20,9 +22,10 @@
         // lay chi tiet 1 du lieu
         public static function find($id){
             global $conn;
-            $sql = "SELECT order_details.*, products.customer_name FROM `order_details` 
-            JOIN customers ON orders.customer_id = customers.id
-            WHERE orders.id = $id";
+            $sql = "SELECT * FROM `order_details` 
+            JOIN orders ON orders.id = order_details.order_id
+
+            WHERE order_details.id = $id";
             $stmt = $conn->query($sql);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $row = $stmt->fetch();
@@ -50,12 +53,15 @@
         // Cap nhat du lieu
         public static function update( $id, $data ){
             global $conn;
-            $customer_id = $data['customer_id'];
-            $order_date = $data['order_date'];
-            $total_amount = $data['total_amount'];
+            $order_id = $data['order_id'];
+            $product_id = $data['product_id'];
+            $order_quantity = $data['order_quantity'];
+            $order_price = $data['order_price'];
+
           
 
-            $sql = "UPDATE `orders` SET `customer_id` = '$customer_id', `order_date` = '$order_date',`total_amount` = '$total_amount' WHERE `id` = $id";
+            $sql = "UPDATE `order_details` SET `order_id` = '$order_id', `product_id` = '$product_id',
+            `order_quantity` = '$order_quantity',`order_price` = '$order_price' WHERE `id` = $id";
             //Thuc hien truy van
             $conn->exec($sql);
             return true;
@@ -65,7 +71,7 @@
         // //Xoa du lieu
         public static function delete($id){
             global $conn;
-            $sql = "DELETE FROM orders WHERE id = $id";
+            $sql = "DELETE FROM order_details WHERE id = $id";
             // Thuc thi SQL
             $conn->exec($sql);
             return true;

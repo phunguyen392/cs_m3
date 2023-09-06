@@ -14,6 +14,7 @@ class OrderController {
     }
     // Hien thi form them moi
     public function create(){
+        $customer = Customer::all();
         $items = Order::all();
         require_once 'Views/orders/create.php';
     }
@@ -22,7 +23,8 @@ class OrderController {
         // Goi model
         Order::store($_POST);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=order&action=index");
+        // header("Location: index.php?controller=order&action=index");
+        echo '<script>window.location.href = "index.php?controller=order&action=index";</script>';
 
     }
     // Hien thi form chinh sua
@@ -39,7 +41,9 @@ class OrderController {
         Order::update( $id, $_POST );
 
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=order&action=index");
+        // header("Location: index.php?controller=order&action=index");
+        echo '<script>window.location.href = "index.php?controller=order&action=index";</script>';
+
     }
 
     // Xoa
@@ -47,7 +51,9 @@ class OrderController {
         $id = $_GET['id'];
         Order::delete($id);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=order&action=index");
+        // header("Location: index.php?controller=order&action=index");
+        echo '<script>window.location.href = "index.php?controller=order&action=index";</script>';
+
     }
     // Xem chi tiet
     public function show(){

@@ -1,4 +1,4 @@
-<form action="index.php?action=update&id=<?= $row['id'];?>" method="post" >
+<form action="index.php?controller=oder&action=update&id=<?= $row['id'];?>" method="post" >
     TÊN KHÁCH HÀNG:<br>
     <select name="customer_id" style="width:177px;">
     <?php foreach ($row as $item) : ?>
@@ -12,5 +12,7 @@
 
     
     <br>
-    <input type="submit" value="Cập nhật">
+    <button type="submit" value="Cập nhật">Cập nhật</button>
+  <button> <a href="index.php?controller=order&action=index">QUAY LẠI</a></button>
+
 </form>

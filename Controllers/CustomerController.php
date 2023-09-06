@@ -22,7 +22,9 @@ class CustomerController {
         // Goi model
         Customer::store($_POST);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?Controller=customer&action=index");
+        // header("Location: index.php?Controller=customer&action=index");
+        echo '<script>window.location.href = "index.php?controller=customer&action=index";</script>';
+
 
     }
     // Hien thi form chinh sua
@@ -39,7 +41,9 @@ class CustomerController {
         Customer::update( $id, $_POST );
 
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=customer&action=index");
+        // header("Location: index.php?controller=customer&action=index");
+        echo '<script>window.location.href = "index.php?controller=customer&action=index";</script>';
+
     }
 
     // Xoa
@@ -47,7 +51,9 @@ class CustomerController {
         $id = $_GET['id'];
         Customer::delete($id);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=customer&action=index");
+        // header("Location: index.php?controller=customer&action=index");
+        echo '<script>window.location.href = "index.php?controller=customer&action=index";</script>';
+
     }
     // Xem chi tiet
     public function show(){

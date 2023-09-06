@@ -17,6 +17,10 @@ class OrderDetailController {
     // Hien thi form them moi
     public function create(){
         $items = OrderDetail::all();
+        $orders = Order::all();
+        // $customers = Customer::all();
+        $products = Product::all();
+
         require_once 'Views/order_details/create.php';
     }
     // Xu ly them moi
@@ -24,14 +28,18 @@ class OrderDetailController {
         // Goi model
         OrderDetail::store($_POST);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=order_detail&action=index");
+        // header("Location: index.php?controller=order_detail&action=index");
+        echo '<script>window.location.href = "index.php?controller=order_detail&action=index";</script>';
+
 
     }
     // Hien thi form chinh sua
     public function edit(){
         $id = $_GET['id'];
         $row = OrderDetail::find($id);
-        // $cus = Customer::all();
+        $orders = Order::all();
+        $products = Product::all();
+        $customers = Customer::all();
         // Truyen xuong Views
         require_once 'Views/order_details/edit.php';
     }
@@ -41,7 +49,9 @@ class OrderDetailController {
         OrderDetail::update( $id, $_POST );
 
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=order_detail&action=index");
+        // header("Location: index.php?controller=order_detail&action=index");
+        echo '<script>window.location.href = "index.php?controller=order_detail&action=index";</script>';
+
     }
 
     // Xoa
@@ -49,7 +59,9 @@ class OrderDetailController {
         $id = $_GET['id'];
         OrderDetail::delete($id);
         // Chuyen huong ve trang danh sach
-        header("Location: index.php?controller=order_detail&action=index");
+        // header("Location: index.php?controller=order_detail&action=index");
+        echo '<script>window.location.href = "index.php?controller=order_detail&action=index";</script>';
+
     }
     // Xem chi tiet
     public function show(){

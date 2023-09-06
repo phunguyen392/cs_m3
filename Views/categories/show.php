@@ -8,7 +8,7 @@
         <td><?= $row['id'];?></td>
         <td><?= $row['category_name'];?></td>
         <td><?= $row['description'];?></td>
-  <td>  <a href="index.php?action=index">QUAY LẠI</a></td>
+  <td>  <a href="index.php?controller=category&action=index">QUAY LẠI</a></td>
         
     </tr>
    

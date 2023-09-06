@@ -17,7 +17,7 @@
     <td><?=$row['phone'];?></td>
     <td><?=$row['email'];?></td>
 
-  <td>  <a href="index.php?action=index">QUAY LẠI</a></td>
+  <td>  <a href="index.php?controller=customer&action=index">QUAY LẠI</a></td>
 </tr>
 
 </table>
