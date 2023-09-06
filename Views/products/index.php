@@ -1,4 +1,8 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="bayve.css">
+</head>
 <div >
     <a href="index.php?controller=product&action=create">THÊM</a>
     <!-- <a href="index.php?action=create" class="btn btn-primary btn-user btn-block"> -->
@@ -100,3 +104,4 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
         <?php endif; ?>
     <?php endfor; ?>
 </div>
+
