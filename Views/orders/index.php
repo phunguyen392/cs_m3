@@ -1,10 +1,16 @@
-<a href="index.php?action=create"> Them moi </a>
+<div>
+
+    <a href="index.php?controller=order&action=create">
+        <button type="button" class="btn btn-info">THÊM MỚI</button>
+    </a>
+</div><br>
+<h3>DANH SÁCH ĐƠN HÀNG</h3><br><br>
 
 <?php
 // Tổng số mục
 $total_items = count($items);
 // Số mục trên mỗi trang
-$items_per_page = 1;
+$items_per_page = 3;
 // Tính toán tổng số trang
 $total_pages = ceil($total_items / $items_per_page);
 // Xác định trang hiện tại
@@ -41,9 +47,15 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
         <td><?php echo $row['order_date'] ?></td>
         <td><?php echo $row['total_amount'] ?></td>
         <td>
-        <a href="index.php?controller=order&action=edit&id=<?php echo $row['id']; ?> " class="btn btn-blue">SỬA</a>
-    <a href="index.php?controller=order_detail&action=index&id=<?php echo $row['id']; ?>" class="btn btn-red">XEM</a>
-    <a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="index.php?controller=order&action=destroy&id=<?php echo $row['id']; ?>" >XOÁ</a>
+        <a href="index.php?controller=order&action=edit&id=<?php echo $row['id']; ?> " >
+        <button type="button" class="btn btn-primary">SỬA</button>
+
+    <a href="index.php?controller=order_detail&action=index&id=<?php echo $row['id']; ?>" >|
+    <button type="button" class="btn btn-success">XEM</button>
+    
+    <a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="index.php?controller=order&action=destroy&id=<?php echo $row['id']; ?>" >|
+    <button type="button" class="btn btn-danger">XÓA</button>
+
         </td>
     </tr>
  <!-- Kết thúc vòng lặp -->
@@ -60,3 +72,23 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
         <?php endif; ?>
     <?php endfor; ?>
 </div>
+
+<style>
+    h3{
+        text-align: center;
+        font-weight: 500;
+        color: red;
+    }
+    table {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+    td{
+        text-align: center;
+        color: black;
+    }
+    th{
+        text-align: center;
+        color: blue;
+    }
+</style>

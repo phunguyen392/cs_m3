@@ -1,13 +1,24 @@
+<form  action="index.php?" method="get">
+    <input type="hidden" name="controller" value="product">
+    <input type="hidden" name="action" value="index">
+    <input type="search" name="search" id="" >
+    <button class="btn btn-primary" type="submit" >
+                <i class="fas fa-search fa-sm" ></i>
+            </button>
+        </form>
+
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="bayve.css">
 </head>
-<div >
-    <a href="index.php?controller=product&action=create">THÊM</a>
-    <!-- <a href="index.php?action=create" class="btn btn-primary btn-user btn-block"> -->
-
+<div>
+    <a href="index.php?controller=product&action=create">
+        <button type="button" class="btn btn-info">THÊM MỚI</button>
+    </a>
 </div>
+<br>
+
 
 
 
@@ -29,7 +40,7 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
 
 
 <!-- Hiển thị dữ liệu và phân trang -->
-<h1 class="m-0 font-weight-bold text-primary">CÁC LOẠI THUỐC</h1>
+<h3 >DANH SÁCH CÁC LOẠI THUỐC</h3>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 
@@ -59,7 +70,6 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
     ?>
         <tr>
         <td><?php echo $index + $start_index + 1; ?></td>
-            <!-- <td><?php echo $r['id']; ?> </td> -->
             <td><?php echo $r['name']; ?> </td>
             <td><?php echo $r['quantity']; ?> </td>
                  <td><?php echo $r['price']; ?> </td>
@@ -79,9 +89,18 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
            
             
             <td>
-                <a href="index.php?controller=product&action=edit&id=<?php echo $r['id']; ?>">Sua</a> |
-                <a href="index.php?controller=product&action=show&id=<?php echo $r['id']; ?>">Xem</a> |
-                <a onclick=" return confirm('ban chac chan k?'); " href="index.php?controller=product&action=destroy&id=<?php echo $r['id']; ?>">Xoa</a>
+                <a href="index.php?controller=product&action=edit&id=<?php echo $r['id']; ?>"> 
+                    <button type="button" class="btn btn-primary">SỬA</button>|
+                </a>
+
+                <a href="index.php?controller=product&action=show&id=<?php echo $r['id']; ?>"> 
+                    <button type="button" class="btn btn-success">XEM</button>|
+                </a>
+
+                <a onclick=" return confirm('ban chac chan k?'); " href="index.php?controller=product&action=destroy&id=<?php echo $r['id']; ?>">
+                    <button type="button" class="btn btn-danger">XOÁ</button>
+    </a>
+
             </td>
         </tr>
 
@@ -104,4 +123,22 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
         <?php endif; ?>
     <?php endfor; ?>
 </div>
-
+<style>
+    h3{
+        text-align: center;
+        font-weight: 500;
+        color: red;
+    }
+    table {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+    td{
+        text-align: center;
+        color: black;
+    }
+    th{
+        text-align: center;
+        color: blue;
+    }
+</style>

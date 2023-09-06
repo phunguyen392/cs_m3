@@ -12,6 +12,6 @@
    
   <br><br>
     <button type="submit" value="THÊM MỚI">THÊM MỚI</button>
-  <button> <a href="index.php?action=index">QUAY LẠI</a></button>
+  <button> <a href="index.php?controller=order&action=index">QUAY LẠI</a></button>
 
 </form>

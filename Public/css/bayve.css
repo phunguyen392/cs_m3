@@ -4,7 +4,10 @@
 .table{
   border-collapse: collapse; /* Gộp đường viền */
   border: 1px solid #000; /* Đường viền 1px với màu đen */
-  width: 500px; /* Kích thước cố định cho bảng */
+  width: 1000px; /* Kích thước cố định cho bảng */
   margin-left: auto; /* Căn giữa theo chiều ngang */
   margin-right: auto; /* Căn giữa theo chiều ngang */
+}
+.th,td{
+  text-align: center;
 }

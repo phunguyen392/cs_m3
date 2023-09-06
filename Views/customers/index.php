@@ -20,8 +20,14 @@
 
 
 <div>
-    <a href="index.php?controller=customer&action=create">THÊM MỚI</a>
+
+<a href="index.php?controller=customer&action=create">
+    <button type="button" class="btn btn-info">THÊM MỚI</button>
+    </a>
+
 </div><br>
+<h3>DANH SÁCH KHÁCH HÀNG</h3><br><br>
+
 <table border="1" class="table table-border">
 <tr>
     <th>STT</th>
@@ -49,9 +55,12 @@
 <td>
 
 
-    <button type="button" class="btn btn-primary"><a href="index.php?controller=customer&action=edit&id=<?php echo $row['id']; ?>" >SỬA</a></button>
-    <button> <a href="index.php?controller=customer&action=show&id=<?php echo $row['id']; ?>" class="btn btn-red">XEM</a></button>
-    <button> <a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="index.php?controller=customer&action=destroy&id=<?php echo $r['id']; ?>" >XOÁ</a></button>
+    <a href="index.php?controller=customer&action=edit&id=<?php echo $row['id']; ?>" >
+    <button type="button" class="btn btn-primary">SỬA</button>|
+    <a href="index.php?controller=customer&action=show&id=<?php echo $row['id']; ?>" >
+    <button type="button" class="btn btn-success">XEM</button>|
+    <a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="index.php?controller=customer&action=destroy&id=<?php echo $r['id']; ?>" >
+    <button type="button" class="btn btn-danger">XOÁ</button>
 
 </td>
 
@@ -70,3 +79,23 @@
                 <?php endif; ?>
                 <?php endfor; ?>
             </div>
+
+            <style>
+    h3{
+        text-align: center;
+        font-weight: 500;
+        color: red;
+    }
+    table {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+    td{
+        text-align: center;
+        color: black;
+    }
+    th{
+        text-align: center;
+        color: blue;
+    }
+</style>

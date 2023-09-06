@@ -5,6 +5,7 @@ class ProductController {
     // Hien thi danh sach records => table
     public function index(){
         $items = Product::all();
+        $categories = Category::all();
         // echo "<pre>";
         // die();
         // Truyen data xuong Views

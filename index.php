@@ -58,9 +58,9 @@ require_once 'db.php';
                 <div class="container-fluid">
                 <?php
    
-   $action = isset($_GET['action']) ? $_GET['action'] : 'index';
-   $controllers = isset($_GET['controller']) ? $_GET['controller'] : 'order_detail';
-
+   $action = isset($_GET['action']) ? $_GET['action'] : '';
+   $controllers = isset($_GET['controller']) ? $_GET['controller'] : '';
+  
    switch ($controllers) {
        case 'category':
            require_once 'Controllers/CategoryController.php';
@@ -83,7 +83,7 @@ require_once 'db.php';
                     $objController = new OrderDetailController();
                     break; 
        default:
-           # code...
+       //..
            break;
    }
    switch ($action) {
@@ -110,7 +110,8 @@ require_once 'db.php';
            break;
       
        default:
-           # code...
+       include_once 'login.php';
+           
            break;
    }
    ?>  
@@ -179,7 +180,7 @@ require_once 'db.php';
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="login.php">Logout</a>
                 </div>
             </div>
         </div>

@@ -1,7 +1,4 @@
-<!-- <?php
-echo "<pre>";
-print_r($row);
-?> -->
+
 <table border="1">
     <tr>
         <th>STT</th>
@@ -17,7 +14,7 @@ print_r($row);
         <td><?= $row['order_date']; ?></td>
         <td><?= $row['total_amount']; ?></td>
 
-  <td>  <a href="index.php?action=index">QUAY LẠI</a></td>
+  <td>  <a href="index.php?controller=order&action=index">QUAY LẠI</a></td>
 
     </tr>
 

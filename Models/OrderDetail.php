@@ -10,7 +10,9 @@
                 FROM order_details
                 JOIN products ON order_details.product_id = products.id
                 JOIN orders ON order_details.order_id = orders.id
-                JOIN customers ON orders.customer_id = customers.id;";
+                JOIN customers ON orders.customer_id = customers.id
+                JOIN categories ON categories.id = products.category_id
+                ";
 
                 $stmt = $conn->query($sql);
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);

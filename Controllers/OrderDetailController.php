@@ -3,6 +3,8 @@
 require_once 'Models/Product.php';
 require_once 'Models/Order.php';
 require_once 'Models/OrderDetail.php';
+require_once 'Models/Category.php';
+
 
 class OrderDetailController {
     // Hien thi danh sach records => table
