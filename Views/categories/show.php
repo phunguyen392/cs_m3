@@ -1,13 +1,14 @@
 <table border="1">
     <tr>
-        <th>Stt</th>
-        <th>TEN</th>
-        <th>mo ta</th>
+        <th>STT</th>
+        <th>DANH MỤC</th>
+        <th>MÔ TẢ</th>
     </tr>
     <tr>
         <td><?= $row['id'];?></td>
-        <td><?= $row['name'];?></td>
+        <td><?= $row['category_name'];?></td>
         <td><?= $row['description'];?></td>
+  <td>  <a href="index.php?action=index">QUAY LẠI</a></td>
         
     </tr>
    

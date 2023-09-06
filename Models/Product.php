@@ -1,5 +1,5 @@
 <?php
-include 'search.php';
+// include 'search.php';
 // Ket noi voi database
 class Product
 {
@@ -9,17 +9,17 @@ class Product
         global $conn;
         if (isset($_GET['search'])) {
             $keyword = $_GET['search'];
-            $sql = "SELECT products.*,categories.name
+            $sql = "SELECT products.*,categories.category_name
             FROM categories
             JOIN products ON categories.id = products.category_id
-            WHERE products.quantity LIKE '%$keyword%'
+            WHERE products.status LIKE '%$keyword%'
             OR products.name LIKE '%$keyword%' ";
             
-
+            
            
         } else {
 
-            $sql = "SELECT categories.name, products.*
+            $sql = "SELECT categories.category_name, products.*
             FROM categories
             JOIN products ON categories.id = products.category_id;";
             $stmt = $conn->query($sql);
@@ -37,7 +37,7 @@ class Product
     public static function find($id)
     {
         global $conn;
-        $sql = "SELECT products.*,categories.name FROM categories
+        $sql = "SELECT products.*,categories.category_name FROM categories
             JOIN products ON categories.id = products.category_id
             WHERE products.id = $id ";
         $stmt = $conn->query($sql);
@@ -54,9 +54,10 @@ class Product
         $quantity = $data['quantity'];
         $price = $data['price'];
         $category_id = $data['category_id'];
-        $status = $data['status'];
+       // Xử lý trường 'status'
+       $status = isset($data['status']) ? ($data['status'] == 0 ? 1 : 0) : 0; // Mặc định là hết hàng nếu không có giá trị được gửi lên        
         
-        if (isset($_FILES['image'])) {
+       if (isset($_FILES['image'])) {
             if (!$_FILES['image']['error']) {
                 move_uploaded_file($_FILES['image']['tmp_name'], ROOT_DIR . '/Public/uploads/' . $_FILES['image']['name']);
                 $image = '/Public/uploads/' . $_FILES['image']['name'];
@@ -80,7 +81,6 @@ class Product
         $quantity = $data['quantity'];
         $price = $data['price'];
         $category_id = $data['category_id'];
-        $status = $data['status'];
 
         $image = '';
           // Kiểm tra xem đã tải lên ảnh mới hay chưa
@@ -109,6 +109,7 @@ class Product
             $stmt->execute();
             $image = $stmt->fetchColumn();
         }
+        $status = $data['status'];
 
 
         $sql = "UPDATE `products` SET `name` = '$name', `quantity` = '$quantity',

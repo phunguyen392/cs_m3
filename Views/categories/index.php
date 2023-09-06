@@ -6,9 +6,9 @@
 <table border="1">
     <tr>
         <th>STT</th>
-        <th>danh muc thuoc</th>
-        <th>mo ta</th>
-        <th>tuy chon</th>
+        <th>DANH MỤC</th>
+        <th>MÔ TẢ</th>
+        <th>TÙY CHỌN</th>
 
         
 
@@ -24,7 +24,7 @@
     ?>
         <tr>
             <td><?php echo $r['id']; ?> </td>
-            <td><?php echo $r['name']; ?> </td>
+            <td><?php echo $r['category_name']; ?> </td>
             <td><?php echo $r['description']; ?> </td>
            
             <td>

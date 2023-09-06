@@ -1,9 +1,17 @@
 
-<?php
-?>
+<div >
+    <a href="index.php?action=create">THÊM</a>
+    <!-- <a href="index.php?action=create" class="btn btn-primary btn-user btn-block"> -->
 
-<a href="index.php?action=create"> Them moi </a>
-<table border="1">
+</div>
+<h1 class="m-0 font-weight-bold text-primary">csm3</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
     <tr>
         <th>STT</th>
         <th>TÊN SẢN PHẨM THUỐC</th>
@@ -30,8 +38,17 @@
             <td><?php echo $r['quantity']; ?> </td>
                  <td><?php echo $r['price']; ?> </td>
                  <td><img width="100" src="<?php echo 'http://localhost/cs_m3' . $r['image']; ?>" alt=""></td>
-            <td><?php echo $r['name']; ?> </td>
-            <td><?php echo  $r['status']  ;?> </td>
+            <td><?php echo $r['category_name']; ?> </td>
+            <td>
+    <?php
+    if($r['status'] == 0) {
+        echo 'Hết hàng';
+    } else {
+        echo 'Còn hàng';
+    }
+    ?>
+</td>
+
          
            
             
@@ -44,4 +61,8 @@
 
         <!-- Kết thúc vòng lặp -->
     <?php endforeach; ?>
-</table>
+    </tbody>
+            </table>
+        </div>
+    </div>
+</div>

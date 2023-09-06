@@ -28,7 +28,7 @@ class ProductController {
     public function edit(){
         $id = $_GET['id'];
         $row = Product::find($id);
-        $cate = Category::all();
+        $cates = Category::all();
         // Truyen xuong Views
         require_once 'Views/products/edit.php';
     }

@@ -26,13 +26,13 @@
         // // Them moi du lieu
         public static function store($data){
             global $conn;
-            $name = $data['name'];
+            $category_name = $data['category_name'];
             $description = $data['description'];
        
             $sql = "INSERT INTO `categories` 
-            ( `name`, `description`) 
+            ( `category_name`, `description`) 
             VALUES 
-            ('$name','$description')";
+            ('$category_name','$description')";
             //Thuc hien truy van
             $conn->exec($sql);
             return true;
@@ -41,11 +41,11 @@
         // Cap nhat du lieu
         public static function update( $id, $data ){
             global $conn;
-            $name = $data['name'];
+            $category_name = $data['category_name'];
             $description = $data['description'];
           
 
-            $sql = "UPDATE `categories` SET `name` = '$name', `description` = '$description' WHERE `id` = $id";
+            $sql = "UPDATE `categories` SET `category_name` = '$category_name', `description` = '$description' WHERE `id` = $id";
             //Thuc hien truy van
             $conn->exec($sql);
             return true;

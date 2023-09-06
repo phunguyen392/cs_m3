@@ -1,5 +1,5 @@
 <?php
-    define('ROOT_URL','http://localhost/');
+    define('ROOT_URL','http://localhost/cs_m3/');
     define('ROOT_DIR', dirname(__FILE__) );
 
 $username   = 'root';
