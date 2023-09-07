@@ -3,6 +3,10 @@
 require_once 'Models/Product.php';
 require_once 'Models/Order.php';
 require_once 'Models/OrderDetail.php';
+require_once 'Models/Category.php';
+require_once 'Models/Customer.php';
+
+
 
 class OrderDetailController {
     // Hien thi danh sach records => table
@@ -18,7 +22,7 @@ class OrderDetailController {
     public function create(){
         $items = OrderDetail::all();
         $orders = Order::all();
-        // $customers = Customer::all();
+        $customers = Customer::all();
         $products = Product::all();
 
         require_once 'Views/order_details/create.php';

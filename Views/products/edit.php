@@ -23,9 +23,19 @@
       <option value="1">con hang</option>
 
      </select>
-    <br>
-    <button type="submit" value="Cập nhật">Cập nhật</button>
-  <button> <a href="index.php?controller=product&action=index">QUAY LẠI</a></button>
-
+    <br><br>
+    <button class="btn btn-secondary" type="submit" value="Cập nhật">Cập nhật</button>
+    <a href="index.php?controller=product&action=index"><button type="button" class="btn btn-warning">QUAY LẠI</button>
+</a>
     
 </form>
+<style>
+  form{
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Điều chỉnh chiều cao theo yêu cầu */
+  text-align: center;
+  color: black;
+  text-align: center;
+  }
+</style>

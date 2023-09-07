@@ -5,7 +5,20 @@
         // lay ta ca du lieu
         public static function all(){
             global $conn;
-            $sql = "SELECT * FROM `customers`";
+            if (isset($_GET['search'])) {
+                $keyword = $_GET['search'];
+                $sql = "SELECT *
+                FROM customers
+                WHERE customers.customer_name LIKE '%$keyword%'
+                OR customers.email LIKE '%$keyword%' 
+                ";
+            } else {
+    
+                $sql = "SELECT *
+                FROM customers";
+                $stmt = $conn->query($sql);
+            }
+
             $stmt = $conn->query($sql);
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $rows = $stmt->fetchAll(); 

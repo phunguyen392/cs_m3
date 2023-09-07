@@ -1,11 +1,18 @@
-<link rel="stylesheet" type="text/css" href="bayve.css">
-
+<!-- <link rel="stylesheet" type="text/css" href="bayve.css"> -->
+<form  action="index.php?" method="get">
+    <input type="hidden" name="controller" value="customer">
+    <input type="hidden" name="action" value="index">
+    <input type="search" name="search" id="" >
+    <button class="btn btn-primary" type="submit" >
+                <i class="fas fa-search fa-sm" ></i>
+            </button>
+        </form>
 <?php
 
     // Tổng số mục
     $total_items = count($items);
     // Số mục trên mỗi trang
-    $items_per_page = 3;
+    $items_per_page = 2;
     // Tính toán tổng số trang
     $total_pages = ceil($total_items / $items_per_page);
     // Xác định trang hiện tại
@@ -20,8 +27,14 @@
 
 
 <div>
-    <a href="index.php?controller=customer&action=create">THÊM MỚI</a>
+
+<a href="index.php?controller=customer&action=create">
+    <button type="button" class="btn btn-info">THÊM MỚI</button>
+    </a>
+
 </div><br>
+<h3>DANH SÁCH KHÁCH HÀNG</h3><br><br>
+
 <table border="1" class="table table-border">
 <tr>
     <th>STT</th>
@@ -49,9 +62,12 @@
 <td>
 
 
-    <button type="button" class="btn btn-primary"><a href="index.php?controller=customer&action=edit&id=<?php echo $row['id']; ?>" >SỬA</a></button>
-    <button> <a href="index.php?controller=customer&action=show&id=<?php echo $row['id']; ?>" class="btn btn-red">XEM</a></button>
-    <button> <a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="index.php?controller=customer&action=destroy&id=<?php echo $r['id']; ?>" >XOÁ</a></button>
+    <a href="index.php?controller=customer&action=edit&id=<?php echo $row['id']; ?>" >
+    <button type="button" class="btn btn-primary">SỬA</button>|
+    <a href="index.php?controller=customer&action=show&id=<?php echo $row['id']; ?>" >
+    <button type="button" class="btn btn-success">XEM</button>|
+    <a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="index.php?controller=customer&action=destroy&id=<?php echo $r['id']; ?>" >
+    <button type="button" class="btn btn-danger">XOÁ</button>
 
 </td>
 
@@ -70,3 +86,46 @@
                 <?php endif; ?>
                 <?php endfor; ?>
             </div>
+
+            <style>
+    h3{
+        text-align: center;
+        font-weight: 500;
+        color: red;
+    }
+    table {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+    td{
+        text-align: center;
+        color: black;
+    }
+    th{
+        text-align: center;
+        color: blue;
+    }
+    .pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.pagination li {
+  margin: 0 5px;
+}
+.pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #0E28CE;
+  background-color: #fff;
+}
+.pagination a.active {
+  background-color: #0E28CE;
+  color: #fff;
+}
+</style>

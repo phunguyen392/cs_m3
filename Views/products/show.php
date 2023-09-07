@@ -12,7 +12,7 @@ print_r($row);
         <th>TRẠNG THÁI</th>
         <th>TÊN DANH MỤC</th>
 
-        <th>tuy chon</th>
+        <th>TÙY CHỌN</th>
 
     </tr>
     <tr>
@@ -31,7 +31,7 @@ print_r($row);
     ?>
 </td>
         <td><?= $row['category_name']; ?></td>
-  <td>  <a href="index.php?action=index">QUAY LẠI</a></td>
+  <td>  <a href="index.php?controller=product&action=index"><button type="button" class="btn btn-warning">QUAY LẠI</button></a></td>
 
     </tr>
 

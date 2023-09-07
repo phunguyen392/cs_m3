@@ -2,7 +2,7 @@
 <label>TÊN KHÁCH HÀNG:</label><br>
 
 <select name="customer_id" style="width:177px;">
-<?php foreach ($customer as $customer) : ?>
+<?php foreach ($customers as $customer) : ?>
           <option value="<?php echo $customer['id']; ?>"><?php echo $customer['customer_name']; ?></option>
         <?php endforeach; ?>
       </select><br><br>      
@@ -12,6 +12,6 @@
    
   <br><br>
     <button type="submit" value="THÊM MỚI">THÊM MỚI</button>
-  <button> <a href="index.php?action=index">QUAY LẠI</a></button>
+  <button> <a href="index.php?controller=order&action=index">QUAY LẠI</a></button>
 
 </form>

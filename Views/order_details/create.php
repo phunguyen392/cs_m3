@@ -1,11 +1,11 @@
 <form action="index.php?controller=order_detail&action=store" method="post" ><br>
-<label>NGÀY THÁNG:</label><br>
+<!-- <label>NGÀY THÁNG:</label><br>
 
 <select name="order_id" style="width:177px;">
 <?php foreach ($orders as $order) : ?>
           <option value="<?php echo $order['id']; ?>"><?php echo $order['order_date']; ?></option>
         <?php endforeach; ?>
-      </select><br><br>   
+      </select><br><br>    -->
       
       <label>TÊN THUỐC:</label><br>
 
@@ -15,12 +15,16 @@
         <?php endforeach; ?>
       </select><br><br>  
 
-  
-
-
         GIÁ ĐƠN THUỐC:<br> <input type="number" name="order_quantity"> <br><br>
-        SỐ LƯỢNG THUỐC TRONG ĐƠN :<br><input type="number" name="order_price"> <br><br>
-   
+     SỐ LƯỢNG THUỐC TRONG ĐƠN :<br><input type="number" name="order_price"> <br><br>
+
+        <label>TÊN KHÁCH HÀNG:</label><br>
+
+<select name="order_id" style="width:177px;">
+<?php foreach ($customers as $customer) : ?>
+          <option value="<?php echo $customer['id']; ?>"><?php echo $customer['customer_name']; ?></option>
+        <?php endforeach; ?>
+      </select><br><br>  
   <br><br>
 <button> <a href="index.php?controller=order_detail&action=index">QUAY LẠI</a></button>
 

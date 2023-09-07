@@ -15,7 +15,7 @@
 
 
 <form  action="index.php?" method="get">
-    <input type="hidden" name="controller" value="product">
+    <input type="hidden" name="controller" value="category">
     <input type="hidden" name="action" value="index">
     <input type="search" name="search" id="" >
     <button class="btn btn-primary" type="submit" >

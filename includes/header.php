@@ -9,7 +9,7 @@
 
 <!-- Topbar Search -->
 <?php
-include 'search.php';
+// include 'search.php';
 ?>
 
 
@@ -166,7 +166,7 @@ include 'search.php';
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nhà thuốc Như Quỳnh</span>
             <img class="img-profile rounded-circle"
-                src="img/undraw_profile.svg">  
+                src="<?php echo ROOT_URL?>Public/uploads/coyta.jpg">  
                                                 
         </a>
         <!-- Dropdown - User Information -->

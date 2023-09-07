@@ -16,7 +16,19 @@
 
      </select>
   <br><br>
-    <button type="submit" value="THÊM MỚI">THÊM MỚI</button>
-  <button> <a href="index.php?controller=product&action=index">QUAY LẠI</a></button>
+  <a >
+        <button type="submit" class="btn btn-info">THÊM MỚI</button> 
+    </a>
+      <a href="index.php?controller=product&action=index"><button type="button" class="btn btn-warning">QUAY LẠI</button>
+</a>
 
 </form>
+<style>
+  form{
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Điều chỉnh chiều cao theo yêu cầu */
+  text-align: center;
+  color: black;
+  }
+</style>

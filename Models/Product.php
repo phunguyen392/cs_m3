@@ -13,7 +13,9 @@ class Product
             FROM categories
             JOIN products ON categories.id = products.category_id
             WHERE categories.category_name LIKE '%$keyword%'
-            OR products.status LIKE '%$keyword%' "
+            OR products.status LIKE '%$keyword%' 
+            "
+            
              ;
             
             
@@ -22,7 +24,7 @@ class Product
 
             $sql = "SELECT categories.category_name, products.*
             FROM categories
-            JOIN products ON categories.id = products.category_id;";
+            JOIN products ON categories.id = products.category_id";
             $stmt = $conn->query($sql);
         }
 

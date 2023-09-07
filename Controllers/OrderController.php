@@ -14,8 +14,10 @@ class OrderController {
     }
     // Hien thi form them moi
     public function create(){
-        $customer = Customer::all();
-        $items = Order::all();
+        $customers = Customer::all();
+        // var_dump($customers);
+        // die();
+        // $items = Order::all();
         require_once 'Views/orders/create.php';
     }
     // Xu ly them moi

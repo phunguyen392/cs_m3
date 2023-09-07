@@ -1,0 +1,13 @@
+.a{
+  background-color: blue;
+}
+.table{
+  border-collapse: collapse; /* Gộp đường viền */
+  border: 1px solid #000; /* Đường viền 1px với màu đen */
+ 
+  max-width: 1300px;
+    margin: 0 auto;
+}
+.th,td{
+  text-align: center;
+}

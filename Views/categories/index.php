@@ -1,8 +1,22 @@
+
 <!-- <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="https://localhost/cs_m3/bayve.css">
 </head> -->
+<form  action="index.php?" method="get">
+    <input type="hidden" name="controller" value="category">
+    <input type="hidden" name="action" value="index">
+    <input type="search" name="search" id="" >
+    <button class="btn btn-primary" type="submit" >
+                <i class="fas fa-search fa-sm" ></i>
+            </button>
+        </form>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://localhost/cs_m3/css/bayve.css">
+</head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.min.js"></script>
 <?php
@@ -38,6 +52,7 @@ if (isset($successMessage)) {
         });
     </script>';
 }
+
 ?>
 
 
@@ -56,9 +71,15 @@ $end_index = $start_index + $items_per_page;
 // Giới hạn mảng $items để chỉ hiển thị các mục trên trang hiện tại
 $items_on_current_page = array_slice($items, $start_index, $items_per_page);
 ?>
+<div>
+    <a href="index.php?controller=category&action=create">
+        <button type="button" class="btn btn-info">THÊM MỚI</button>
+    </a>
 
-<a href="index.php?controller=category&action=create"> Them moi </a>
-<table border="1">
+    </div>
+    <br>
+<h3>DANH MỤC THUỐC</h3><br><br>
+<table border="1" class="table">
     <tr>
         <th>STT</th>
         <th>DANH MỤC</th>
@@ -113,3 +134,48 @@ $items_on_current_page = array_slice($items, $start_index, $items_per_page);
         <?php endif; ?>
     <?php endfor; ?>
 </div>
+<style>
+    h3{
+        text-align: center;
+        font-weight: 500;
+        color: red;
+    }
+    table {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+    td{
+        text-align: center;
+        color: black;
+    }
+    th{
+        text-align: center;
+        color: blue;
+    }
+    i{
+color: red;
+    }
+    .pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.pagination li {
+  margin: 0 5px;
+}
+.pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #0E28CE;
+  background-color: #fff;
+}
+.pagination a.active {
+  background-color: #0E28CE;
+  color: #fff;
+}
+</style>

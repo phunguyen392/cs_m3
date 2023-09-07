@@ -10,7 +10,9 @@
                 FROM order_details
                 JOIN products ON order_details.product_id = products.id
                 JOIN orders ON order_details.order_id = orders.id
-                JOIN customers ON orders.customer_id = customers.id;";
+                JOIN customers ON orders.customer_id = customers.id
+                JOIN categories ON categories.id = products.category_id
+                ";
 
                 $stmt = $conn->query($sql);
                 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -23,7 +25,10 @@
         public static function find($id){
             global $conn;
             $sql = "SELECT * FROM `order_details` 
-            JOIN orders ON orders.id = order_details.order_id
+           JOIN products ON order_details.product_id = products.id
+                JOIN orders ON order_details.order_id = orders.id
+                JOIN customers ON orders.customer_id = customers.id
+                JOIN categories ON categories.id = products.category_id
 
             WHERE order_details.id = $id";
             $stmt = $conn->query($sql);
