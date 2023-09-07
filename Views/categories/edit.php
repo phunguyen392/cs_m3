@@ -1,4 +1,4 @@
-<form action="index.php?action=update&id=<?= $row['id']; ?>" method="post">
+<form action="index.php?controller=category&action=update&id=<?= $row['id']; ?>" method="post">
   TÊN DANH MỤC :<br><input type="text" name="category_name" value="<?= $row['category_name']; ?>"> <br><br>
   MÔ TẢ:<br> <input type="text" name="description" value="<?= $row['description']; ?>"> <br>
 
