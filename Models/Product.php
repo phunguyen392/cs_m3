@@ -17,9 +17,6 @@ class Product
             "
             
              ;
-            
-            
-           
         } else {
 
             $sql = "SELECT categories.category_name, products.*
